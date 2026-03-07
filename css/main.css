@@ -17,22 +17,34 @@ body {
     color: #d8c0ff
 }
 
-h1 {
-    font-size: 350%;
+h1.text {
+    font-size: 380%;
     font-family: "Alex Brush", cursive;
+}
+
+h2 {
+    font-size: 320%;
 }
 
 h3 {
     font-size: 180%;
-    font-family: "Bpmf Zihi Kai Std", sans-serif;
 }
 
-h1, h3 {
+h4 {
+    font-size: 120%;
+}
+
+.text {
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
     transition: color 0.75s ease
 }
 
-h1:hover, h3:hover {
+.text:hover {
     color: rgb(236, 222, 252);
+}
+
+.article-text {
+    color: #852b81
 }
 
 .container {
@@ -41,6 +53,25 @@ h1:hover, h3:hover {
 
 .container a {
     margin-left: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+#headers {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    margin-top: 12rem;
+    background-color: #d8c0ff;
+    gap: 2rem;
 }
 
 button {
@@ -52,7 +83,7 @@ button {
     background-color: #190416;
     color: #d8c0ff;
     font-family: "Bpmf Zihi Kai Std", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     height: 2.3rem;
     width: 5.75rem;
 }
