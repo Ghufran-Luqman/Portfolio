@@ -23,8 +23,16 @@ h1 {
 }
 
 h3 {
-    font-size: 200%;
+    font-size: 180%;
     font-family: "Bpmf Zihi Kai Std", sans-serif;
+}
+
+h1, h3 {
+    transition: color 0.75s ease
+}
+
+h1:hover, h3:hover {
+    color: rgb(236, 222, 252);
 }
 
 .container {
@@ -36,13 +44,20 @@ h3 {
 }
 
 button {
-    border-radius: 5em;
+    border-radius: 4em;
     border-color: #bda8df;
+    transition: border-color 0.5s ease, color 0.5s ease;;
     border-width: 0.15rem;
     border-style: solid;
     background-color: #190416;
     color: #d8c0ff;
     font-family: "Bpmf Zihi Kai Std", sans-serif;
-    height: 1.8rem;
-    width: 3.75rem;
+    font-size: 1rem;
+    height: 2.3rem;
+    width: 5.75rem;
+}
+
+button:hover {
+    border-color: rgb(236, 222, 252);
+    color: rgb(241, 237, 247);
 }
