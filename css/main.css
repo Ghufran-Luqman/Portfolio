@@ -62,16 +62,16 @@ main {
 }
 
 #headers {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 12rem;
+    margin-bottom: 12rem;
     text-align: center;
 }
 
 article {
     display: flex;
-    margin-top: 12rem;
     background-color: #d8c0ff;
     gap: 2rem;
+    flex-direction: column;
 }
 
 button {
@@ -91,4 +91,20 @@ button {
 button:hover {
     border-color: rgb(236, 222, 252);
     color: rgb(241, 237, 247);
+}
+
+.article-text {
+    color: #6c4e78;
+}
+
+.article-text:hover {
+    color: #6c4e78;
+}
+
+.article-description {
+    margin-bottom: 1rem;
+}
+
+section article p {
+    font-size: 5rem;
 }
