@@ -52,7 +52,13 @@ h4 {
 }
 
 .container a {
-    margin-left: auto;
+    justify-content: center;
+    /*margin-left: auto; /*centers and allows for more links to be added*/
+}
+
+#login-button {
+    margin-left: 2rem;
+    margin-right: 1rem;
 }
 
 main {
@@ -88,6 +94,7 @@ button {
     width: 5.75rem;
 }
 
+
 button:hover {
     border-color: rgb(236, 222, 252);
     color: rgb(241, 237, 247);
@@ -110,11 +117,25 @@ section article p {
 }
 
 a {
+    display: flex;
     color: #d8c0ff;
     text-decoration: none;
+    flex-direction: column;
 }
 
+.hoverLink {
+    flex-grow: 1;
+    height: 4rem;
+    width: 15rem;
+}
+
+
 .hoverLink p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 4rem;
     border-radius: 0.1rem;
     transition: background-color 0.5s ease, color 0.01s;
 }
@@ -122,10 +143,6 @@ a {
 .hoverLink:hover p {
     background-color: #d8c0ff;
     color: #6c4e78;
-}
-
-a {
-    height: 1rem;
 }
 
 a:visited {
