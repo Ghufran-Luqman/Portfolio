@@ -108,3 +108,26 @@ button:hover {
 section article p {
     font-size: 5rem;
 }
+
+a {
+    color: #d8c0ff;
+    text-decoration: none;
+}
+
+.hoverLink p {
+    border-radius: 0.1rem;
+    transition: background-color 0.5s ease, color 0.01s;
+}
+
+.hoverLink:hover p {
+    background-color: #d8c0ff;
+    color: #6c4e78;
+}
+
+a {
+    height: 1rem;
+}
+
+a:visited {
+    color: #d8c0ff;
+}
