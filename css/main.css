@@ -43,10 +43,6 @@ h4 {
     color: rgb(236, 222, 252);
 }
 
-.article-text {
-    color: #852b81
-}
-
 .container {
     display: flex;
 }
@@ -78,6 +74,16 @@ article {
     background-color: #d8c0ff;
     gap: 2rem;
     flex-direction: column;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 5%;
 }
 
 button {
@@ -101,13 +107,6 @@ button {
 }
 */
 
-article {
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
 button:hover {
     border-color: #d47af8;
     color: #d47af8;
@@ -120,15 +119,40 @@ button:hover {
 }
 
 .article-text:hover {
-    color: #6c4e78;
+    color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
 .article-description {
     margin-bottom: 1rem;
 }
 
-section article p {
-    font-size: 5rem;
+.about-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 5rem;
+}
+
+
+.about-me-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    align-self: flex-start;
+    margin-top: 5rem;
+    max-width: 50rem;
+}
+
+.about-me-description p {
+    max-width: 30rem;
+}
+
+p {
+    line-height: 1.4;
+}
+
+figure {
+    margin-right: 0rem;
 }
 
 a {
