@@ -39,6 +39,10 @@ h4 {
     transition: color 0.75s ease
 }
 
+li::marker {
+    color: #6c4e78;
+}
+
 .text:hover {
     color: rgb(236, 222, 252);
 }
@@ -78,6 +82,11 @@ article {
     margin-bottom: 2rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem ;
+    align-items: center;
 }
 
 img {
@@ -116,35 +125,32 @@ button:hover {
     margin-left: 0.5rem;
     margin-top: 0.1rem;
     color: #6c4e78;
+    width: fit-content;
 }
 
 .article-text:hover {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
-.article-description {
-    margin-bottom: 1rem;
-}
-
 .about-me {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: 5rem;
 }
 
 
-.about-me-description {
+.article-description {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
     align-self: flex-start;
     margin-top: 5rem;
-    max-width: 50rem;
+    max-width: 25rem;
 }
 
-.about-me-description p {
-    max-width: 30rem;
+.article-description p {
+    max-width: 20rem;
+    flex-grow: 1;
 }
 
 p {
@@ -153,6 +159,7 @@ p {
 
 figure {
     margin-right: 0rem;
+    flex-grow: 1;
 }
 
 a {
