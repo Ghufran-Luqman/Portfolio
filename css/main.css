@@ -132,25 +132,27 @@ button:hover {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
-.about-me {
+.article-content {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-
 
 .article-description {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
     align-self: flex-start;
+    flex-grow: 1;
+    max-width: 30rem;
+}
+
+.move-down {
     margin-top: 5rem;
-    max-width: 25rem;
 }
 
 .article-description p {
     max-width: 20rem;
-    flex-grow: 1;
 }
 
 p {
@@ -158,7 +160,11 @@ p {
 }
 
 figure {
-    margin-right: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem;
     flex-grow: 1;
 }
 
@@ -193,4 +199,30 @@ a {
 
 a:visited {
     color: #d8c0ff;
+}
+
+#experience {
+    margin-bottom: 10rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#current {
+    color: #6c4e78;
+    background-color: #d8c0ff;
+    transition: color 0.5s ease;
+}
+
+#current:hover {
+    color: #d47af8;
 }

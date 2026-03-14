@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghufran Luqman</title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -15,6 +15,9 @@
         <nav>
             <div class="container">
                 <!--Fill in links-->
+                <a href="index.html" class="hoverLink">
+                    <p class="text" id="current">Home</p>
+                </a>
                 <a href="education.html" class="hoverLink">
                     <p class="text">Education</p>
                 </a>
@@ -24,6 +27,7 @@
                 <a href="skills.html" class="hoverLink">
                     <p class="text">Skills and Achievements</p>
                 </a>
+                <!--
                 <a href="addEntry.html" class="hoverLink">
                     <p class="text">Add Entry</p>
                 </a>
@@ -31,6 +35,7 @@
                 <a href="login.html" id="login-button">
                     <button>Login</button>
                 </a>
+                -->
             </div>
         </nav>
     </header>
@@ -38,18 +43,17 @@
     <main>
         <div id="headers">
             <h1 class="text">Ghufran Luqman</h1>
-            <h3 class="text">Portfolio</h3>
         </div>
 
         <section>
             <article>
                 <h2 class="text article-text">About Me</h2>
-                <div class="about-me">
+                <div class="article-content">
                     <figure>
                             <img src="images/self-image-cropped.jpg"/>
                             <figcaption class="text article-text">(in Turkey)</figcaption>
                     </figure>
-                    <div class="article-description">
+                    <div class="article-description move-down">
                         <h4 class="text article-text">Computer Science Undergraduate Student at Queen Mary University of London</h4>
                         <p class="text article-text">As an aspiring student, my aim is to make an impact in the field - perhaps in Cybersecurity.
                             To achieve this, I plan to gain as much knowledge and experience as I can during my bachelor's degree in Computer Science,
@@ -60,13 +64,37 @@
 
                 <!--<span class="line"></span>-->
             </article>
-            <article>
+            <article id="experience">
                 <h2 class="text article-text">Experience</h2>
-                <div class="article-description">
-                    <h4 class="text article-text">Worked at Computer Gurus Ltd.</h4>
-                    <p class="text article-text">I did things..</p>
+                <div class="article-content">
+                    <div class="article-description">
+                        <ul>
+                            <h4 class="text article-text">Computer Technician Intern at Computer Gurus Ltd.</h4>
+                            <p class="text article-text"><li class="text article-text">Completed repairs of various electronic devices whilst collaborating as a team under pressure.</li>
+                                <li class="text article-text">Acquired knowledge in installing and configuring operating systems, assembling PCs, professionally conducting repairs, testing devices and managing customer interactions.</li>
+                                <li class="text article-text">Gained interest for repairing devices by staying after work hours to complete additional tasks, using this opportunity to refine adaptability skills and teamwork.</li>
+                            </p>
+                        </ul>
+                    </div>
                 </div>
             </article>
         </section>
     </main>
+    <footer>
+        <h2 class="text">Contact</h2>
+        <div class="footer-elements">
+            <a href="tel:+447933567581" class="hoverLink">
+                <p class="text">Phone</p>
+            </a>
+            <a href="mailto:ghufranluqman1@gmail.com" class="hoverLink">
+                <p class="text">Email</p>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-luqman-a20a252a5/" class="hoverLink">
+                <p class="text">LinkedIn</p>
+            </a>
+            <a href="https://github.com/ghufran-luqman" class="hoverLink">
+                <p class="text">GitHub</p>
+            </a>
+        </div>
+    </footer>
 </body>
