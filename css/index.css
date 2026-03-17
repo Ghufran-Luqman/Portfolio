@@ -1,20 +1,9 @@
-/*------------------------------------------Fonts------------------------------------------*/
-.alex-brush-regular {
-  font-family: "Alex Brush", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.bpmf-zihi-kai-std-regular {
-  font-family: "Bpmf Zihi Kai Std", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-/*---------------------------------------END of fonts---------------------------------------*/
-
 body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
     background-color: #6c4e78;
-    color: #d8c0ff
+    color: #d8c0ff;
 }
 
 h1.text {
@@ -201,9 +190,11 @@ a:visited {
     color: #d8c0ff;
 }
 
+/*
 #experience {
     margin-bottom: 10rem;
 }
+*/
 
 footer {
     display: flex;
