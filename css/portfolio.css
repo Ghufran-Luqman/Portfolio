@@ -137,7 +137,6 @@ button:hover {
     flex-direction: column;
     margin-top: 0rem;
     max-width: 35rem;
-    align-items: center;
 }
 
 .move-down {
