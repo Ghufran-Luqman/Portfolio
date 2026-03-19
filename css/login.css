@@ -1,0 +1,229 @@
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    background-color: #6c4e78;
+    color: #d8c0ff;
+}
+
+h1.text {
+    font-size: 380%;
+    font-family: "Alex Brush", cursive;
+}
+
+h2 {
+    font-size: 320%;
+}
+
+h3 {
+    font-size: 180%;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+.text {
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
+    transition: color 0.75s ease
+}
+
+.text:hover {
+    color: rgb(236, 222, 252);
+}
+
+.container {
+    display: flex;
+}
+
+.container a {
+    justify-content: center;
+}
+
+#login-button {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    align-items: center;
+}
+
+#headers {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    text-align: center;
+}
+
+article {
+    display: flex;
+    background-color: #d8c0ff;
+    gap: 2rem;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem ;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+button {
+    border-radius: 4em;
+    border-color: #ca89e3;
+    transition: border-color 0.5s ease, color 0.5s ease;;
+    border-width: 0.15rem;
+    border-style: solid;
+    background-color: #190416;
+    color: #ca89e3;
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
+    font-size: 1.2rem;
+    height: 2.3rem;
+    width: 5.75rem;
+}
+
+button:hover {
+    border-color: #c951f8;
+    color: #c951f8;
+}
+
+.article-text {
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+    color: #6c4e78;
+    width: fit-content;
+}
+
+.article-text:hover {
+    color: #6c4e78; /*keeps the article text from changing colour on hover*/
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-subtitle {
+    margin-bottom: 0.25rem;
+}
+
+.article-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    max-width: 35rem;
+}
+
+.article-description p {
+    max-width: 25rem;
+}
+
+p {
+    line-height: 1.4;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0rem;
+    flex-grow: 1;
+    max-width: 70%;
+    margin-bottom: 2rem;
+}
+
+a {
+    display: flex;
+    color: #d8c0ff;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.hoverLink {
+    flex-grow: 1;
+    height: 4rem;
+    width: 15rem;
+}
+
+
+.hoverLink p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 4rem;
+    border-radius: 0.1rem;
+    transition: background-color 0.5s ease, color 0.01s;
+}
+
+.hoverLink:hover p {
+    background-color: #d8c0ff;
+    color: #6c4e78;
+}
+
+a:visited {
+    color: #d8c0ff;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#current {
+    color: #6c4e78;
+    background-color: #d8c0ff;
+    transition: color 0.5s ease;
+}
+
+#current:hover {
+    color: #d47af8;
+}
+
+#login {
+    min-width: 30rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+#login h2 {
+    margin-bottom: 3rem;
+}
+
+#login form button {
+    margin-top: 2.5rem;
+}
+
+.form-element {
+    display: flex;
+    max-width: 15rem;
+    flex-direction: column;
+    margin: 0.25rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
