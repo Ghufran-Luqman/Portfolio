@@ -15,14 +15,6 @@ h2 {
     font-size: 320%;
 }
 
-h3 {
-    font-size: 180%;
-}
-
-h4 {
-    font-size: 120%;
-}
-
 .text {
     font-family: "Bpmf Zihi Kai Std", sans-serif;
     transition: color 0.75s ease
@@ -38,11 +30,6 @@ h4 {
 
 .container a {
     justify-content: center;
-}
-
-#login-button {
-    margin-left: 2rem;
-    margin-right: 1rem;
 }
 
 main {
@@ -72,12 +59,6 @@ article {
     padding-left: 0.3rem;
     padding-right: 0.3rem ;
     align-items: center;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1rem;
 }
 
 button {
@@ -110,41 +91,11 @@ button:hover {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
-.article-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.article-subtitle {
-    margin-bottom: 0.25rem;
-}
-
-.article-description {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0rem;
-    max-width: 35rem;
-}
-
-.article-description p {
-    max-width: 25rem;
-}
 
 p {
     line-height: 1.4;
 }
 
-figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0rem;
-    flex-grow: 1;
-    max-width: 70%;
-    margin-bottom: 2rem;
-}
 
 a {
     display: flex;
@@ -191,11 +142,6 @@ footer {
     align-items: center;
 }
 
-#current {
-    color: #6c4e78;
-    background-color: #d8c0ff;
-    transition: color 0.5s ease;
-}
 
 #current:hover {
     color: #d47af8;
