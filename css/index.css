@@ -45,11 +45,6 @@ li::marker {
     /*margin-left: auto; /*centers and allows for more links to be added*/
 }
 
-#login-button {
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -84,31 +79,6 @@ img {
     border-radius: 5%;
 }
 
-button {
-    border-radius: 4em;
-    border-color: #bda8df;
-    transition: border-color 0.5s ease, color 0.5s ease;;
-    border-width: 0.15rem;
-    border-style: solid;
-    background-color: #190416;
-    color: #d8c0ff;
-    font-family: "Bpmf Zihi Kai Std", sans-serif;
-    font-size: 1.2rem;
-    height: 2.3rem;
-    width: 5.75rem;
-}
-
-/*
-.line {
-    border: 1px solid #6c4e78;
-    width: 65rem;
-}
-*/
-
-button:hover {
-    border-color: #d47af8;
-    color: #d47af8;
-}
 
 .article-text {
     margin-left: 0.5rem;
@@ -189,12 +159,6 @@ a {
 a:visited {
     color: #d8c0ff;
 }
-
-/*
-#experience {
-    margin-bottom: 10rem;
-}
-*/
 
 footer {
     display: flex;

@@ -15,14 +15,6 @@ h2 {
     font-size: 320%;
 }
 
-h3 {
-    font-size: 180%;
-}
-
-h4 {
-    font-size: 120%;
-}
-
 .text {
     font-family: "Bpmf Zihi Kai Std", sans-serif;
     transition: color 0.75s ease
@@ -44,6 +36,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 90vh;
+    align-items: center;
 }
 
 #headers {
@@ -68,12 +61,24 @@ article {
     align-items: center;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 1rem;
+button {
+    border-radius: 4em;
+    border-color: #ca89e3;
+    transition: border-color 0.5s ease, color 0.5s ease;;
+    border-width: 0.15rem;
+    border-style: solid;
+    background-color: #190416;
+    color: #ca89e3;
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
+    font-size: 1.2rem;
+    height: 2.3rem;
+    width: 5.75rem;
 }
 
+button:hover {
+    border-color: #c951f8;
+    color: #c951f8;
+}
 
 .article-text {
     margin-left: 0.5rem;
@@ -86,41 +91,11 @@ img {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
-.article-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.article-subtitle {
-    margin-bottom: 0.25rem;
-}
-
-.article-description {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0rem;
-    max-width: 35rem;
-}
-
-.article-description p {
-    max-width: 25rem;
-}
 
 p {
     line-height: 1.4;
 }
 
-figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0rem;
-    flex-grow: 1;
-    max-width: 70%;
-    margin-bottom: 2rem;
-}
 
 a {
     display: flex;
@@ -175,4 +150,36 @@ footer {
 
 #current:hover {
     color: #d47af8;
+}
+
+
+#blog {
+    min-width: 30rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+#blog h2 {
+    margin-bottom: 1rem;
+}
+
+
+.form-element {
+    display: flex;
+    max-width: 15rem;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#form-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
 }

@@ -40,10 +40,6 @@ h4 {
     justify-content: center;
 }
 
-#login-button {
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
 
 main {
     display: flex;
@@ -79,24 +75,6 @@ img {
     border-radius: 1rem;
 }
 
-button {
-    border-radius: 4em;
-    border-color: #bda8df;
-    transition: border-color 0.5s ease, color 0.5s ease;;
-    border-width: 0.15rem;
-    border-style: solid;
-    background-color: #190416;
-    color: #d8c0ff;
-    font-family: "Bpmf Zihi Kai Std", sans-serif;
-    font-size: 1.2rem;
-    height: 2.3rem;
-    width: 5.75rem;
-}
-
-button:hover {
-    border-color: #d47af8;
-    color: #d47af8;
-}
 
 .article-text {
     margin-left: 0.5rem;

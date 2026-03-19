@@ -142,10 +142,16 @@ footer {
     align-items: center;
 }
 
+#current {
+    color: #6c4e78;
+    background-color: #d8c0ff;
+    transition: color 0.5s ease;
+}
 
 #current:hover {
     color: #d47af8;
 }
+
 
 #login {
     min-width: 30rem;
