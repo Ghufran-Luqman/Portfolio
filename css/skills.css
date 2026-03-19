@@ -1,64 +1,7 @@
-h1.text {
-    font-size: 380%;
-    font-family: "Alex Brush", cursive;
-}
-
-h2 {
-    font-size: 320%;
-}
-
-h3 {
-    font-size: 180%;
-}
-
-h4 {
-    font-size: 120%;
-}
-
-.text {
-    font-family: "Bpmf Zihi Kai Std", sans-serif;
-    transition: color 0.75s ease
-}
-
-.text:hover {
-    color: rgb(236, 222, 252);
-}
-
-.container {
-    display: flex;
-}
-
-.container a {
-    justify-content: center;
-}
-
-
-main {
-    display: flex;
-    flex-direction: column;
-    min-height: 90vh;
-}
-
 main h1 {
     margin-top: 12rem;
     margin-bottom: 12rem;
     text-align: center;
-}
-
-article {
-    display: flex;
-    background-color: #d8c0ff;
-    gap: 2rem;
-    flex-direction: column;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding-bottom: 2rem;
-    padding-top: 1rem;
-    padding-left: 0.3rem;
-    padding-right: 0.3rem ;
-    align-items: center;
 }
 
 img {
@@ -67,17 +10,6 @@ img {
     border-radius: 1rem;
 }
 
-
-.article-text {
-    margin-left: 0.5rem;
-    margin-top: 0.1rem;
-    color: #6c4e78;
-    width: fit-content;
-}
-
-.article-text:hover {
-    color: #6c4e78; /*keeps the article text from changing colour on hover*/
-}
 
 .article-content {
     display: flex;
@@ -101,9 +33,6 @@ img {
     max-width: 25rem;
 }
 
-p {
-    line-height: 1.4;
-}
 
 figure {
     display: flex;
@@ -113,59 +42,4 @@ figure {
     flex-grow: 1;
     max-width: 70%;
     margin-bottom: 2rem;
-}
-
-a {
-    display: flex;
-    color: #d8c0ff;
-    text-decoration: none;
-    flex-direction: column;
-}
-
-.hoverLink {
-    flex-grow: 1;
-    height: 4rem;
-    width: 15rem;
-}
-
-
-.hoverLink p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 4rem;
-    border-radius: 0.1rem;
-    transition: background-color 0.5s ease;
-}
-
-.hoverLink:hover p {
-    background-color: #d8c0ff;
-    color: #6c4e78;
-}
-
-a:visited {
-    color: #d8c0ff;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-elements {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#current {
-    color: #6c4e78;
-    background-color: #d8c0ff;
-    transition: color 0.5s ease;
-}
-
-#current:hover {
-    color: #d47af8;
 }
