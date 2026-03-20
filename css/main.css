@@ -56,13 +56,12 @@ p {
 
 /* Nav bar */
 
-.container {
+nav {
     display: flex;
 }
 
-.container a {
+nav a {
     justify-content: center;
-    /*margin-left: auto; /*centers and allows for more links to be added*/
 }
 
 a {
@@ -142,11 +141,5 @@ article {
 footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.footer-elements {
-    display: flex;
-    flex-direction: row;
     align-items: center;
 }
