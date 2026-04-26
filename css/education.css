@@ -1,0 +1,29 @@
+li::marker {
+    color: #6c4e78;
+}
+
+.article-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+}
+
+.article-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    align-self: flex-start;
+    flex-grow: 1;
+    max-width: 30rem;
+}
+
+.article-description p {
+    max-width: 20rem;
+}
+
+#grades {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+}
