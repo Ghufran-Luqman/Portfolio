@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,24 +19,35 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="hoverLink">
+            <a href="index.php" class="hoverLink">
                 <p class="text">Home</p>
             </a>
-            <a href="education.html" class="hoverLink">
+            <a href="education.php" class="hoverLink">
                 <p class="text">Education</p>
             </a>
-            <a href="portfolio.html" class="hoverLink">
+            <a href="portfolio.php" class="hoverLink">
                 <p class="text">Portfolio</p>
             </a>
-            <a href="skills.html" class="hoverLink">
+            <a href="skills.php" class="hoverLink">
                 <p class="text">Skills</p>
             </a>
-            <a href="addEntry.html" class="hoverLink">
+            <a href="addEntry.php" class="hoverLink">
                 <p class="text" id="current">Add Entry</p>
             </a>
-            <a href="login.html" class="hoverLink">
-                <p class="text">Login</p>
-            </a>
+            <?php
+            if (isset($_SESSION['userId'])) { // if user is logged in
+                echo
+                '<a href="logout.php" class="hoverLink">
+                    <p class="text">Logout</p>
+                </a>';
+            }
+            else {
+                echo
+                '<a href="login.php" class="hoverLink">
+                    <p class="text">Login</p>
+                </a>';
+            }
+            ?>
         </nav>
     </header>
 

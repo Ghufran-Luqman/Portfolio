@@ -136,6 +136,19 @@ article {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
 }
 
+/* input elements */
+
+input, textarea {
+    font-size: 1.1rem;
+    border-radius: 0.1rem;
+    border: 1px solid #6c4e78;
+    padding: 0.2rem;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #6c4e78;
+}
+
 /* footer */
 
 footer {

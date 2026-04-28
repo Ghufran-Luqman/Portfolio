@@ -15,22 +15,22 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="hoverLink">
+            <a href="index.php" class="hoverLink">
                 <p class="text">Home</p>
             </a>
-            <a href="education.html" class="hoverLink">
+            <a href="education.php" class="hoverLink">
                 <p class="text">Education</p>
             </a>
-            <a href="portfolio.html" class="hoverLink">
+            <a href="portfolio.php" class="hoverLink">
                 <p class="text">Portfolio</p>
             </a>
-            <a href="skills.html" class="hoverLink">
+            <a href="skills.php" class="hoverLink">
                 <p class="text">Skills</p>
             </a>
-            <a href="addEntry.html" class="hoverLink">
-                <p class="text">Add Entry</p>
+            <a href="viewBlog.php" class="hoverLink">
+                <p class="text">View Blog</p>
             </a>
-            <a href="login.html" class="hoverLink">
+            <a href="login.php" class="hoverLink">
                 <p class="text" id="current">Login</p>
             </a>
         </nav>
@@ -43,8 +43,15 @@
             <article id="login">
                 <h2 class="text article-text">Login</h2>
                 <form action="loginProcess.php" method="POST">
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['error_message'])) {
+                        echo "<p class='text article-text' id='error_message'>" . $_SESSION['error_message'] . " Please try again.</p>";
+                        unset($_SESSION['error_message']);
+                    }
+                    ?>
                     <div class="form-element">
-                        <input type="email" id="email" name="email" placeholder="Email" class="text article-text" required>
+                        <input autocomplete="on" type="email" id="email" name="email" placeholder="Email" class="text article-text" required>
                     </div>
 
                     <div class="form-element">
