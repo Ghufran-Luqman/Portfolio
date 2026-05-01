@@ -113,10 +113,9 @@ if (!($query_result->num_rows>0)) { // if no posts
                 }
                 ?>
             </article>
-            <article id="add-blog">
-                <h2 class="text article-text">Add Blog</h2>
+            <div id='add-blog'>
                 <button type="submit" id="add-post" data-logged-in="<?php echo isset($_SESSION['userId']) ? 'true' : 'false'; ?>">Add Post</button>
-            </article>
+            </div>
         </section>
         
     </main>
