@@ -31,8 +31,8 @@ session_start();
             <a href="skills.php" class="hoverLink">
                 <p class="text">Skills</p>
             </a>
-            <a href="addEntry.php" class="hoverLink">
-                <p class="text" id="current">Add Entry</p>
+            <a href="viewBlog.php" class="hoverLink">
+                <p class="text">View Blog</p>
             </a>
             <?php
             if (isset($_SESSION['userId'])) { // if user is logged in

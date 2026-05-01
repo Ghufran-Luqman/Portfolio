@@ -1,5 +1,22 @@
 <?php
 session_start();
+
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "portfolio_logins";
+
+// Creates connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if (!(isset($_SESSION['userId']))) { // if the user is not logged in
+    // check if there are any blog posts
+    $query_result = $conn->query("SELECT * FROM posts");
+    if (!($query_result->num_rows>0)) { // if no posts
+        header("Location: login.php");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +27,8 @@ session_start();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/addEntry.css">
+    <link rel="stylesheet" href="css/viewBlog.css">
+    <script src="js/viewBlog.js" defer></script>
 
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,20 +76,7 @@ session_start();
         <section>
             <article id="blog">
                 <h2 class="text article-text">Add Blog</h2>
-                <form action="addPost.php" method="POST">
-                    <div class="form-element">
-                        <input type="text" placeholder="Title" id="title" name="title" required>
-                    </div>
-
-                    <div class="form-element">
-                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="6" required></textarea>
-                    </div>
-
-                    <div class="form-element" id="form-buttons">
-                        <button type="submit">Post</button>
-                        <button type="reset">Clear</button>
-                    </div>
-                </form>
+                <button type="submit" id="add-post" data-logged-in="<?php echo isset($_SESSION['userId']) ? 'true' : 'false'; ?>">Add Post</button>
             </article>
         </section>
         
