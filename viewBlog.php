@@ -1,22 +1,31 @@
 <?php
 session_start();
+date_default_timezone_set('UTC');
 
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "portfolio_logins";
 
-// Creates connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!(isset($_SESSION['userId']))) { // if the user is not logged in
-    // check if there are any blog posts
-    $query_result = $conn->query("SELECT * FROM posts");
-    if (!($query_result->num_rows>0)) { // if no posts
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$posts = true;
+
+$query_result = $conn->query("SELECT * FROM posts");
+// check if there are any blog posts
+if (!($query_result->num_rows>0)) { // if no posts
+    $posts = false;
+    if (!(isset($_SESSION['userId']))) { // if the user is not logged in
         header("Location: login.php");
         exit();
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +35,6 @@ if (!(isset($_SESSION['userId']))) { // if the user is not logged in
     <title>Add Entry</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/addEntry.css">
     <link rel="stylesheet" href="css/viewBlog.css">
     <script src="js/viewBlog.js" defer></script>
 
@@ -74,7 +82,38 @@ if (!(isset($_SESSION['userId']))) { // if the user is not logged in
         <h1 class="text">View Blog</h1>
 
         <section>
-            <article id="blog">
+            <article id='blogs'>
+                <h2 class='text article-text'>Blog Posts</h2>
+                <?php
+                if ($posts) { // if there are posts
+                    $query = "SELECT title, body, created_at FROM posts";
+                    $result = $conn->query($query);
+
+                    // put all posts into array
+                    $blogPosts=[];
+                    while($row=$result->fetch_assoc()) {
+                        $blogPosts[]=$row;
+                    }
+
+                    // sorting algorithm to come..
+
+
+                    foreach ($blogPosts as $post) {
+                        echo "<div class='blogEntry'>";
+                        $dateToDisplay = date("jS F Y, g:i T", strtotime($post['created_at']));
+                        echo "<p class='text article-text date-time'>".$dateToDisplay."</p>";
+                        echo "<h3 class='text article-text title'>".$post['title']."</h3>";
+                        echo "<p class='text article-text body'>".nl2br($post['body'])."</p>";
+                        echo "<hr>";
+                        echo "</div>";
+                    }
+                }
+                else { // no posts
+                echo "<p class='text article-text'>There are no posts currently. Please add a post to view it.</p>";
+                }
+                ?>
+            </article>
+            <article id="add-blog">
                 <h2 class="text article-text">Add Blog</h2>
                 <button type="submit" id="add-post" data-logged-in="<?php echo isset($_SESSION['userId']) ? 'true' : 'false'; ?>">Add Post</button>
             </article>
@@ -100,3 +139,8 @@ if (!(isset($_SESSION['userId']))) { // if the user is not logged in
     </footer>
 </body>
 </html>
+
+<?php
+$query_result->close();
+$conn->close();
+?>

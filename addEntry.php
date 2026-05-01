@@ -10,6 +10,7 @@ session_start();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/addEntry.css">
+    <script src=js/addEntry.js defer></script>
 
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,12 +64,12 @@ session_start();
                     </div>
 
                     <div class="form-element">
-                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="6" required></textarea>
+                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="15" required></textarea>
                     </div>
 
                     <div class="form-element" id="form-buttons">
-                        <button type="submit">Post</button>
-                        <button type="reset">Clear</button>
+                        <button type="submit" id="post">Post</button>
+                        <button type="reset" id="clear">Clear</button>
                     </div>
                 </form>
             </article>

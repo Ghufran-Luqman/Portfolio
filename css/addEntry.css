@@ -39,12 +39,14 @@ button:hover {
 
 .form-element {
     display: flex;
-    max-width: 15rem;
+    width: 100%;
     flex-direction: column;
+    justify-content: center;
     margin: 0.5rem;
 }
 
 form {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -55,4 +57,8 @@ form {
     flex-direction: row;
     gap: 2rem;
     margin-top: 2rem;
+}
+
+#blog-text, input {
+    font-family: "Bpmf Zihi Kai Std", sans-serif;;
 }

@@ -53,6 +53,14 @@ p {
     color: rgb(236, 222, 252);
 }
 
+/* Header */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #6c4e78;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 
 /* Nav bar */
 

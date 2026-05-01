@@ -4,10 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "portfolio_logins";
 
-// Creates connection
+// creates connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Checks connection
+// checks connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -31,4 +31,6 @@ else {
     exit();
 }
 
+$query_result->close();
+$conn->close();
 ?>

@@ -1,17 +1,76 @@
-#add-post {
-    height:fit-content;
-    width: fit-content;
+main {
+    align-items: center;
+}
+
+main h1 {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    text-align: center;
+}
+
+button {
+    border-radius: 4em;
+    border-color: #ca89e3;
+    transition: border-color 0.5s ease, color 0.5s ease;;
+    border-width: 0.15rem;
+    border-style: solid;
+    background-color: #190416;
+    color: #ca89e3;
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
+    font-size: 1.2rem;
+    min-height: 2.3rem;
+    min-width: 5.75rem;
     padding: 1rem;
 }
 
-#blog {
-    height: 20rem;
+button:hover {
+    border-color: #c951f8;
+    color: #c951f8;
+}
+
+#add-blog {
+    min-width: 20rem;
+    padding: 1.5rem;
+    margin-bottom: 5rem;
+    min-height: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+#add-blog h2 {
+    margin-bottom: 0.7rem;
+}
+
+.form-element {
+    display: flex;
+    max-width: 15rem;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#form-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 article h2 {
     padding-bottom:2rem;
+}
+
+#blogs {
+    padding: 2rem;
+}
+
+.blogEntry {
+    width: 100%;
 }
