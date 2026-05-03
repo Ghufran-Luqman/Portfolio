@@ -85,7 +85,7 @@ article h2 {
 
 
 
-.delete-btn {
+.material-btn {
     font-size: 1.3rem !important;
     background: none;
     border: none;
@@ -96,4 +96,3 @@ article h2 {
     min-height: unset;
     margin-left: 0.4rem;
 }
-

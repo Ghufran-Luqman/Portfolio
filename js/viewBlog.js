@@ -1,5 +1,5 @@
 const button = document.getElementById('add-post');
-const deleteBtns = document.querySelectorAll('.material-icons');
+const deleteBtns = document.querySelectorAll('.delete-btn');
 
 button.addEventListener('click', function() {
     const loggedInStatus = this.dataset.loggedIn === 'true';

@@ -32,6 +32,9 @@ if ((isset($_SESSION['userId']))) {
     $logged_in=true;
 }
 
+$id = $_GET['id'];
+$conn->query("DELETE FROM posts WHERE id='$id'");
+
 ?>
 
 <!DOCTYPE html>
@@ -113,8 +116,19 @@ if ((isset($_SESSION['userId']))) {
                         $blogPosts[]=$row;
                     }
 
-                    // sorting algorithm to come..
+                    // insertion sorting algorithm
+                    for ($i = 1; $i < count($blogPosts); $i++) {
+                        $current = $blogPosts[$i];
+                        $currentTime = strtotime($current['created_at']);
+                        $j = $i - 1;
 
+                        while ($j >= 0 && strtotime($blogPosts[$j]['created_at']) < $currentTime) {
+                            $blogPosts[$j + 1] = $blogPosts[$j];
+                            $j--;
+                        }
+
+                        $blogPosts[$j + 1] = $current;
+                    }
 
                     foreach ($blogPosts as $post) {
                         echo "<div class='blogEntry'>";
@@ -123,9 +137,14 @@ if ((isset($_SESSION['userId']))) {
                         <p class='text article-text date-time' id='date'>".$dateToDisplay."</p>";
                         if ($logged_in) {
                             echo "
+                            <form action='editPost.php'>
+                                <input type='hidden' name='id' value='".$post['id']."'>
+                                <button type='submit' class='text article-text material-icons material-btn'>edit</button>
+                            </form>
+
                             <form action='deletePost.php'>
                                 <input type='hidden' name='id' value='".$post['id']."'>
-                                <button type='submit' class='text article-text material-icons delete-btn'>delete</span>
+                                <button type='submit' class='text article-text material-icons material-btn delete-btn'>delete</button>
                             </form>
                             ";
                         }
