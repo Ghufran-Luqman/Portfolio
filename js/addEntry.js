@@ -3,6 +3,7 @@ const blog_text = document.getElementById('blog-text');
 const post = document.getElementById('post');
 const clear = document.getElementById('clear');
 const errorMsg = document.getElementById('errorMsg');
+let valid = true;
 let titleValid = true;
 let bodyValid = true;
 

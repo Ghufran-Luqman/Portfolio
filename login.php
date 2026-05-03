@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <script src="js/login.js" defer></script>
 
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +45,7 @@
             <article id="login">
                 <h2 class="text article-text">Login</h2>
                 <form action="loginProcess.php" method="POST">
+                    <p id='jsErrorMsg' class='text article-text'></p>
                     <?php
                     session_start();
                     if (isset($_SESSION['error_message'])) {
@@ -52,13 +54,13 @@
                     }
                     ?>
                     <div class="form-element">
-                        <input autocomplete="on" type="email" id="email" name="email" placeholder="Email" class="text article-text" required>
+                        <input autocomplete="on" type="email" id="email" name="email" placeholder="Email" class="text article-text">
                     </div>
 
                     <div class="form-element">
-                        <input type="password" id="password" name="password" placeholder="Password (min 7)" class="text article-text" pattern=".{7,}" required>
+                        <input type="password" id="password" name="password" placeholder="Password (min 7)" class="text article-text" pattern=".{7,}">
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" id='submit'>Login</button>
                 </form>
             </article>
         </section>
