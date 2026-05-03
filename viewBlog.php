@@ -76,6 +76,14 @@ if (!($query_result->num_rows>0)) { // if no posts
             }
             ?>
         </nav>
+        <?php
+        if (isset($_SESSION['userId'])) {
+            echo
+            "<aside>
+                <h3 class='text'>Welcome, User!</h3>
+            </aside>";
+        }
+        ?>
     </header>
 
     <main>
@@ -101,7 +109,9 @@ if (!($query_result->num_rows>0)) { // if no posts
                     foreach ($blogPosts as $post) {
                         echo "<div class='blogEntry'>";
                         $dateToDisplay = date("jS F Y, g:i T", strtotime($post['created_at']));
-                        echo "<p class='text article-text date-time'>".$dateToDisplay."</p>";
+                        echo "<div id='date-div'>
+                        <p class='text article-text date-time' id='date'>".$dateToDisplay."</p>
+                        </div>";
                         echo "<h3 class='text article-text title'>".$post['title']."</h3>";
                         echo "<p class='text article-text body'>".nl2br($post['body'])."</p>";
                         echo "<hr>";

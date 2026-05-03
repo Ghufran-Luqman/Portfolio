@@ -115,6 +115,19 @@ a:visited {
     color: #d47af8;
 }
 
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+aside h3 {
+    font-size: 150%;
+}
+
+
 /* articles */
 
 article {

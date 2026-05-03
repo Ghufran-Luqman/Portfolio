@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!(isset($_SESSION['userId']))) { // if user is not logged in
+    header("Location: login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,21 +38,13 @@ session_start();
             <a href="viewBlog.php" class="hoverLink">
                 <p class="text">View Blog</p>
             </a>
-            <?php
-            if (isset($_SESSION['userId'])) { // if user is logged in
-                echo
-                '<a href="logout.php" class="hoverLink">
-                    <p class="text">Logout</p>
-                </a>';
-            }
-            else {
-                echo
-                '<a href="login.php" class="hoverLink">
-                    <p class="text">Login</p>
-                </a>';
-            }
-            ?>
+            <a href="logout.php" class="hoverLink">
+                <p class="text">Logout</p>
+            </a>
         </nav>
+        <aside>
+            <h3 class='text'>Welcome, User!</h3>
+        </aside>
     </header>
 
     <main>
@@ -57,7 +52,9 @@ session_start();
 
         <section>
             <article id="blog">
-                <h2 class="text article-text">Add Blog</h2>
+                <div id='header'>
+                    <h2 class="text article-text">Add Blog</h2>
+                </div>
                 <form action="addPost.php" method="POST">
                     <div class="form-element">
                         <input type="text" placeholder="Title" id="title" name="title" required>

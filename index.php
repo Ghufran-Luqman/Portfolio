@@ -49,6 +49,14 @@ session_start();
             }
             ?>
         </nav>
+        <?php
+        if (isset($_SESSION['userId'])) {
+            echo
+            "<aside>
+                <h3 class='text'>Welcome, User!</h3>
+            </aside>";
+        }
+        ?>
     </header>
 
     <main>
