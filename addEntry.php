@@ -84,7 +84,7 @@ if (!(isset($_SESSION['userId']))) { // if user is not logged in
             <a href="mailto:ghufranluqman1@gmail.com" class="hoverLink">
                 <p class="text">Email</p>
             </a>
-            <a href="https://www.linkedin.com/in/muhammad-luqman-a20a252a5/" class="hoverLink">
+            <a href="https://www.linkedin.com/in/muhammad-ghufran-luqman-a20a252a5/" class="hoverLink">
                 <p class="text">LinkedIn</p>
             </a>
             <a href="https://github.com/ghufran-luqman" class="hoverLink">
