@@ -19,17 +19,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $result = $conn->query("SELECT title, body FROM posts WHERE id='$id'");
-    if ($result && $result->num_rows>0) {
-        $postData = $result->fetch_assoc();
-        $postTitle = $postData['title'];
-        $postBody = $postData['body'];
-    }
+$id = $_GET['id'];
+$result = $conn->query("SELECT title, body FROM posts WHERE id='$id'");
+if ($result && $result->num_rows>0) {
+    $postData = $result->fetch_assoc();
+    $postTitle = $postData['title'];
+    $postBody = $postData['body'];
 }
-
 ?>
 
 
@@ -77,15 +73,17 @@ if (isset($_GET['id'])) {
     </header>
 
     <main>
-        <h1 class="text">Add Entry</h1>
+        <h1 class="text">Edit Post</h1>
 
         <section>
             <article id="blog">
                 <div id='header'>
                     <h2 class="text article-text">Add Blog</h2>
                 </div>
-                <form action="addPost.php" method="POST">
+                <form action="addEditedPost.php" method="POST">
                     <p id='errorMsg' class='text article-text'></p>
+
+                    <input type='hidden' name='id' value='<?php echo $id; ?>'>
 
                     <div class="form-element">
                         <?php

@@ -32,8 +32,6 @@ if ((isset($_SESSION['userId']))) {
     $logged_in=true;
 }
 
-$id = $_GET['id'];
-$conn->query("DELETE FROM posts WHERE id='$id'");
 
 ?>
 
