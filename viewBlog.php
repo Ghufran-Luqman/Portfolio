@@ -26,6 +26,12 @@ if (!($query_result->num_rows>0)) { // if no posts
     }
 }
 
+$logged_in=false;
+
+if ((isset($_SESSION['userId']))) {
+    $logged_in=true;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +48,9 @@ if (!($query_result->num_rows>0)) { // if no posts
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bpmf+Zihi+Kai+Std&display=swap" rel="stylesheet">
+
+    <!--delete icon-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -94,7 +103,7 @@ if (!($query_result->num_rows>0)) { // if no posts
                 <h2 class='text article-text'>Blog Posts</h2>
                 <?php
                 if ($posts) { // if there are posts
-                    $query = "SELECT title, body, created_at FROM posts";
+                    $query = "SELECT id, title, body, created_at FROM posts";
                     $result = $conn->query($query);
 
                     // put all posts into array
@@ -110,8 +119,16 @@ if (!($query_result->num_rows>0)) { // if no posts
                         echo "<div class='blogEntry'>";
                         $dateToDisplay = date("jS F Y, g:i T", strtotime($post['created_at']));
                         echo "<div id='date-div'>
-                        <p class='text article-text date-time' id='date'>".$dateToDisplay."</p>
-                        </div>";
+                        <p class='text article-text date-time' id='date'>".$dateToDisplay."</p>";
+                        if ($logged_in) {
+                            echo "
+                            <form action='deletePost.php'>
+                                <input type='hidden' name='id' value='".$post['id']."'>
+                                <button type='submit' class='text article-text material-icons delete-btn'>delete</span>
+                            </form>
+                            ";
+                        }
+                        echo "</div>";
                         echo "<h3 class='text article-text title'>".$post['title']."</h3>";
                         echo "<p class='text article-text body'>".nl2br($post['body'])."</p>";
                         echo "<hr>";

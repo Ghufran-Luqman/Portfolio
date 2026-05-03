@@ -1,4 +1,5 @@
 const button = document.getElementById('add-post');
+const deleteBtns = document.querySelectorAll('.material-icons');
 
 button.addEventListener('click', function() {
     const loggedInStatus = this.dataset.loggedIn === 'true';
@@ -9,3 +10,12 @@ button.addEventListener('click', function() {
         window.location.href = 'login.php';
     }
 });
+
+deleteBtns.forEach(function(btn) {
+    btn.addEventListener('click', function(e){
+        userConfirmation = confirm("Are you sure you want to delete this blog post?");
+        if (!userConfirmation) { // clicked cancel
+            e.preventDefault();
+        }
+    })
+})
