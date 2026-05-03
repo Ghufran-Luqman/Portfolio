@@ -10,6 +10,8 @@ session_start();
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/educationMobile.css">
 
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">

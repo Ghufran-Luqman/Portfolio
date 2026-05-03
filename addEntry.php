@@ -13,6 +13,7 @@ if (!(isset($_SESSION['userId']))) { // if user is not logged in
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/addEntry.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
     <script src=js/addEntry.js defer></script>
 
     <!--font-->

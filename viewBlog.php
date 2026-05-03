@@ -42,6 +42,7 @@ if ((isset($_SESSION['userId']))) {
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/viewBlog.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
     <script src="js/viewBlog.js" defer></script>
 
     <!--font-->

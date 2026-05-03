@@ -1,0 +1,16 @@
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+nav .hoverLink {
+    width: 100%;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column !important;
+}
+figure {
+    max-width: 100% !important;
+}
