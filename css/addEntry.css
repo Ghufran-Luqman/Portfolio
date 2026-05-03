@@ -72,3 +72,11 @@ article {
     flex-direction: column;
     align-items: center;
 }
+
+.notFilledOut {
+    background-color: rgb(191, 62, 111) !important;
+}
+
+.notFilledOut::placeholder {
+    color: #d8c0ff !important;
+}

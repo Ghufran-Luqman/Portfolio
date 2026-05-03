@@ -56,12 +56,14 @@ if (!(isset($_SESSION['userId']))) { // if user is not logged in
                     <h2 class="text article-text">Add Blog</h2>
                 </div>
                 <form action="addPost.php" method="POST">
+                    <p id='errorMsg' class='text article-text'></p>
+
                     <div class="form-element">
-                        <input type="text" placeholder="Title" id="title" name="title" required>
+                        <input type="text" placeholder="Title" id="title" name="title">
                     </div>
 
                     <div class="form-element">
-                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="15" required></textarea>
+                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="15"></textarea>
                     </div>
 
                     <div class="form-element" id="form-buttons">
