@@ -83,8 +83,6 @@ article h2 {
     justify-content: flex-end;
 }
 
-
-
 .material-btn {
     font-size: 1.3rem !important;
     background: none;
@@ -95,4 +93,13 @@ article h2 {
     min-width: unset;
     min-height: unset;
     margin-left: 0.4rem;
+}
+
+form .material-btn {
+    transition: background-color 0.5s ease;
+}
+
+form:hover .material-btn {
+    background-color: #6c4e78;
+    color: #d8c0ff;
 }
