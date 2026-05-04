@@ -18,17 +18,18 @@ img {
     display: flex;
     flex-direction: column;
     margin-top: 0rem;
-    align-self: flex-start;
+    /*align-self: flex-start;*/
     flex-grow: 1;
     max-width: 30rem;
 }
 
+/*
 .move-down {
     margin-top: 5rem;
-}
+}*/
 
 .article-description p {
-    max-width: 20rem;
+    max-width: max-content;
 }
 
 figure {
@@ -38,4 +39,14 @@ figure {
     justify-content: center;
     margin: 0rem;
     flex-grow: 1;
+}
+
+div h4 {
+    padding: 1rem;
+    padding-bottom: 0.2rem;
+}
+
+div p {
+    padding: 1rem;
+    padding-top: 0.2rem;
 }

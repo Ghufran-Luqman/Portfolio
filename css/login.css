@@ -53,3 +53,16 @@ form {
     align-items: center;
     flex-direction: column;
 }
+
+#error_message {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.notFilledOut {
+    background-color: rgb(191, 62, 111) !important;
+}
+
+.notFilledOut::placeholder {
+    color: #d8c0ff !important;
+}

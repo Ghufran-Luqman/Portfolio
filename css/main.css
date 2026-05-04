@@ -53,6 +53,15 @@ p {
     color: rgb(236, 222, 252);
 }
 
+/* Header */
+hr {
+    border: 0;
+    border-top: 1px solid #6c4e78;
+    height: 1px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
 
 /* Nav bar */
 
@@ -107,6 +116,19 @@ a:visited {
     color: #d47af8;
 }
 
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+aside h3 {
+    font-size: 150%;
+}
+
+
 /* articles */
 
 article {
@@ -134,6 +156,19 @@ article {
 
 .article-text:hover {
     color: #6c4e78; /*keeps the article text from changing colour on hover*/
+}
+
+/* input elements */
+
+input, textarea {
+    font-size: 1.1rem;
+    border-radius: 0.1rem;
+    border: 1px solid #6c4e78;
+    padding: 0.2rem;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #6c4e78;
 }
 
 /* footer */
