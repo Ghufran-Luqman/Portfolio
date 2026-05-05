@@ -11,7 +11,7 @@ main h1 {
 button {
     border-radius: 4em;
     border-color: #ca89e3;
-    transition: border-color 0.5s ease, color 0.5s ease;;
+    transition: border-color 0.5s ease, color 0.5s ease;
     border-width: 0.15rem;
     border-style: solid;
     background-color: #190416;
@@ -49,7 +49,7 @@ button:hover {
 form {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0;
     margin: 0;
 }
@@ -93,13 +93,14 @@ article h2 {
     min-width: unset;
     min-height: unset;
     margin-left: 0.4rem;
+    transition: background-color 0.3s ease;
 }
 
-form .material-btn {
-    transition: background-color 0.5s ease;
-}
-
-form:hover .material-btn {
+.material-btn:hover {
     background-color: #6c4e78;
     color: #d8c0ff;
+}
+
+#refresh {
+    border-radius: 0.8rem;
 }

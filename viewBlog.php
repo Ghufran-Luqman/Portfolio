@@ -103,9 +103,27 @@ if ((isset($_SESSION['userId']))) {
         <section>
             <article id='blogs'>
                 <h2 class='text article-text'>Blog Posts</h2>
+                <form method='POST' action='viewBlog.php'>
+                    <select name='month'>
+                        <?php
+                        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                        foreach ($months as $month) {
+                            echo "<option value='".$month."'>".$month."</option>";
+                        }
+                        ?>
+                    </select>
+                    <button type='submit' class='text article-text material-icons material-btn'>filter_list</button>
+                    <a href='viewBlog.php'><span class='text article-text material-icons material-btn' id='refresh'>refresh</span></a>
+                </form>
                 <?php
                 if ($posts) { // if there are posts
-                    $query = "SELECT id, title, body, created_at FROM posts";
+                    if (isset($_POST['month'])) {
+                        $month = $_POST['month'];
+                        $query = "SELECT id, title, body, created_at FROM posts WHERE MONTHNAME(created_at) = '$month'";
+                    }
+                    else {
+                        $query = "SELECT id, title, body, created_at FROM posts";
+                    }
                     $result = $conn->query($query);
 
                     // put all posts into array
