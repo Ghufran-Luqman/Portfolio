@@ -3,6 +3,17 @@ session_start();
 if (!(isset($_SESSION['userId']))) { // if user is not logged in
     header("Location: login.php");
 }
+$titleExists = false;
+if (isset($_POST['title'])) {
+    $title = $_POST['title'];
+    $titleExists = true;
+}
+
+$bodyExists = false;
+if (isset($_POST['blog-text'])) {
+    $body = $_POST['blog-text'];
+    $bodyExists = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -60,16 +71,21 @@ if (!(isset($_SESSION['userId']))) { // if user is not logged in
                     <p id='errorMsg' class='text article-text'></p>
 
                     <div class="form-element">
-                        <input type="text" placeholder="Title" id="title" name="title">
+                        <input type="text" placeholder="Title" id="title" name="title" value='<?php if ($titleExists) {
+                            echo $title;
+                        } ?>'>
                     </div>
 
                     <div class="form-element">
-                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="15"></textarea>
+                        <textarea placeholder="Enter your text here" id="blog-text" name="blog-text" rows="15"><?php if ($bodyExists) {
+                            echo $body;
+                        } ?></textarea>
                     </div>
 
                     <div class="form-element" id="form-buttons">
                         <button type="submit" id="post">Post</button>
-                        <button type="reset" id="clear">Clear</button>
+                        <button type="submit" id="preview" formaction="previewPost.php">Preview</button>
+                        <button type="button" id="clear">Clear</button>
                     </div>
                 </form>
             </article>

@@ -3,11 +3,12 @@ const blog_text = document.getElementById('blog-text');
 const post = document.getElementById('post');
 const clear = document.getElementById('clear');
 const errorMsg = document.getElementById('errorMsg');
+const preview = document.getElementById('preview');
 let valid = true;
 let titleValid = true;
 let bodyValid = true;
 
-post.addEventListener('click', function(e) {
+function notFilledOut(e) {
     let valid = true;
     if (title.value.length==0) {
         title.classList.add('notFilledOut');
@@ -23,7 +24,11 @@ post.addEventListener('click', function(e) {
         e.preventDefault();
         errorMsg.textContent = "Please fill in all fields before posting."
     }
-})
+}
+
+post.addEventListener('click', notFilledOut);
+
+preview.addEventListener('click', notFilledOut);
 
 title.addEventListener('input', function() {
     if (!(titleValid)) {
@@ -49,5 +54,7 @@ clear.addEventListener('click', function(e) {
         title.classList.remove('notFilledOut');
         blog_text.classList.remove('notFilledOut');
         errorMsg.textContent="";
+        title.value="";
+        blog_text.value="";
     }
 });

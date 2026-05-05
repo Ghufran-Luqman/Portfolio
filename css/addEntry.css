@@ -80,3 +80,10 @@ article {
 .notFilledOut::placeholder {
     color: #d8c0ff !important;
 }
+
+#preview {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

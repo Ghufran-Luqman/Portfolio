@@ -39,7 +39,7 @@ if ((isset($_SESSION['userId']))) {
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Entry</title>
+    <title>View Blog</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/viewBlog.css">
@@ -189,7 +189,13 @@ if ((isset($_SESSION['userId']))) {
                 ?>
             </article>
             <div id='add-blog'>
-                <button type="submit" id="add-post" data-logged-in="<?php echo isset($_SESSION['userId']) ? 'true' : 'false'; ?>">Add Post</button>
+                <button type="submit" id="add-post" data-logged-in="<?php 
+                if (isset($_SESSION['userId'])) {
+                    echo 'true';
+                }
+                else {
+                    echo 'false';
+                } ?>">Add Post</button>
             </div>
         </section>
         
