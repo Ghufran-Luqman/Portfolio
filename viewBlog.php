@@ -109,7 +109,13 @@ if ((isset($_SESSION['userId']))) {
                             <?php
                             $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                             foreach ($months as $month) {
-                                echo "<option value='".$month."'>".$month."</option>";
+                                if (isset($_POST['month']) && $_POST['month'] === $month) {
+                                    $selected = 'selected';
+                                }
+                                else {
+                                    $selected = '';
+                                }
+                                echo "<option value='".$month."' ".$selected.">".$month."</option>";
                             }
                             ?>
                         </select>
