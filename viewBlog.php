@@ -102,19 +102,21 @@ if ((isset($_SESSION['userId']))) {
 
         <section>
             <article id='blogs'>
-                <h2 class='text article-text'>Blog Posts</h2>
-                <form method='POST' action='viewBlog.php'>
-                    <select name='month'>
-                        <?php
-                        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                        foreach ($months as $month) {
-                            echo "<option value='".$month."'>".$month."</option>";
-                        }
-                        ?>
-                    </select>
-                    <button type='submit' class='text article-text material-icons material-btn'>filter_list</button>
-                    <a href='viewBlog.php'><span class='text article-text material-icons material-btn' id='refresh'>refresh</span></a>
-                </form>
+                <div id='titleAndDropdown'>
+                    <h2 class='text article-text'>Blog Posts</h2>
+                    <form method='POST' action='viewBlog.php' id='dropdown'>
+                        <select class='text' name='month'>
+                            <?php
+                            $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                            foreach ($months as $month) {
+                                echo "<option value='".$month."'>".$month."</option>";
+                            }
+                            ?>
+                        </select>
+                        <button type='submit' class='text article-text material-icons material-btn'>filter_list</button>
+                        <a href='viewBlog.php'><span class='text article-text material-icons material-btn' id='refresh'>refresh</span></a>
+                    </form>
+                </div>
                 <?php
                 if ($posts) { // if there are posts
                     if (isset($_POST['month'])) {
@@ -169,6 +171,10 @@ if ((isset($_SESSION['userId']))) {
                         echo "<p class='text article-text body'>".nl2br($post['body'])."</p>";
                         echo "<hr>";
                         echo "</div>";
+                    }
+
+                    if (count($blogPosts)==0) {
+                        echo "<p class='text article-text'>There are currently no posts with that filter.</p>";
                     }
                 }
                 else { // no posts

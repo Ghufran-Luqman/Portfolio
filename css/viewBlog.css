@@ -68,6 +68,7 @@ article h2 {
 #blogs {
     padding: 2rem;
     margin-bottom: 0rem;
+    min-width: 60rem;
 }
 
 .blogEntry {
@@ -103,4 +104,22 @@ article h2 {
 
 #refresh {
     border-radius: 0.8rem;
+}
+
+select {
+    background-color: #6c4e78;
+    color: #d8c0ff;
+    outline: none;
+    border-radius: 0.2rem;
+}
+
+#dropdown {
+    margin-right: auto;
+}
+
+#titleAndDropdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
