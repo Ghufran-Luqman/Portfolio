@@ -31,9 +31,49 @@ figure {
     max-width: 100% !important;
 }
 
-#blog, #login {
-    min-width: min-content;
+#blog, #login, #blogs {
+    min-width: unset;
+    max-width: 100%;
     padding: 1rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
+}
+
+#form-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+
+#blog input, #blog textarea {
+    max-width: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+#add-blog {
+    min-width: unset;
+}
+
+#blogs {
+    margin: 0;
+    max-width: 100%;
+    padding: 0.5rem;
+    min-width: unset !important;
+}
+
+html, body{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 100%;
+}
+
+header {
+    max-width: 100%;
 }
