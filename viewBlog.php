@@ -32,6 +32,12 @@ if ((isset($_SESSION['userId']))) {
     $logged_in=true;
 }
 
+if (isset($_POST['month'])) { // if the user filtered for a month
+    $month = $_POST['month'];
+}
+else { // if the user did not filter
+    $month = date('F'); // gets current month
+}
 
 ?>
 
@@ -107,15 +113,26 @@ if ((isset($_SESSION['userId']))) {
                     <form method='POST' action='viewBlog.php' id='dropdown'>
                         <select class='text' name='month'>
                             <?php
-                            $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-                            foreach ($months as $month) {
-                                if (isset($_POST['month']) && $_POST['month'] === $month) {
-                                    $selected = 'selected';
+                            $availableMonthsQuery = "SELECT DISTINCT MONTHNAME(created_at) as monthName, MONTH(created_at) as monthNum FROM posts ORDER BY monthNUM DESC";
+                            $monthsQueryResult = $conn->query($availableMonthsQuery);
+                            
+                            $currentMonth = date('F');
+                            if ($month == $currentMonth) {
+                                echo "<option value='".$currentMonth."' selected>".$currentMonth."</option>";
+                            }
+                            else {
+                                echo "<option value='".$currentMonth."'>".$currentMonth."</option>";
+                            }
+
+                            while ($option = $monthsQueryResult->fetch_assoc()) {
+                                if ($option['monthName'] != $currentMonth) { // don't do current month as already added above
+                                    if ($month == $option['monthName']) {
+                                        echo "<option value='".$option['monthName']."' selected>".$option['monthName']."</option>";
+                                    }
+                                    else {
+                                        echo "<option value='".$option['monthName']."'>".$option['monthName']."</option>";
+                                    }
                                 }
-                                else {
-                                    $selected = '';
-                                }
-                                echo "<option value='".$month."' ".$selected.">".$month."</option>";
                             }
                             ?>
                         </select>
@@ -125,13 +142,7 @@ if ((isset($_SESSION['userId']))) {
                 </div>
                 <?php
                 if ($posts) { // if there are posts
-                    if (isset($_POST['month'])) {
-                        $month = $_POST['month'];
-                        $query = "SELECT id, title, body, created_at FROM posts WHERE MONTHNAME(created_at) = '$month'";
-                    }
-                    else {
-                        $query = "SELECT id, title, body, created_at FROM posts";
-                    }
+                    $query = "SELECT id, title, body, created_at FROM posts WHERE MONTHNAME(created_at) = '$month'";
                     $result = $conn->query($query);
 
                     // put all posts into array
@@ -184,7 +195,7 @@ if ((isset($_SESSION['userId']))) {
                     }
                 }
                 else { // no posts
-                echo "<p class='text article-text'>There are no posts currently. Please add a post to view it.</p>";
+                    echo "<p class='text article-text'>There are no posts currently. Please add a post to view it.</p>";
                 }
                 ?>
             </article>
@@ -223,4 +234,7 @@ if ((isset($_SESSION['userId']))) {
 <?php
 $query_result->close();
 $conn->close();
+
+
+
 ?>
