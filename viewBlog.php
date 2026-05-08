@@ -199,6 +199,15 @@ else { // if the user did not filter
                 }
                 ?>
             </article>
+            <div id='add-blog'>
+                <button type="submit" id="add-post" data-logged-in="<?php 
+                if (isset($_SESSION['userId'])) {
+                    echo 'true';
+                }
+                else {
+                    echo 'false';
+                } ?>">Add Post</button>
+            </div>
         </section>
         
     </main>
