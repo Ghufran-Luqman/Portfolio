@@ -154,12 +154,12 @@ else { // if the user did not filter
                     // insertion sorting algorithm
                     for ($i = 1; $i < count($blogPosts); $i++) {
                         $current = $blogPosts[$i];
-                        $currentTime = strtotime($current['created_at']);
+                        $currentTime = strtotime($current['created_at']); // converts time from string to time since 1970 (bigger = newer)
                         $j = $i - 1;
 
-                        while ($j >= 0 && strtotime($blogPosts[$j]['created_at']) < $currentTime) {
-                            $blogPosts[$j + 1] = $blogPosts[$j];
-                            $j--;
+                        while ($j >= 0 && strtotime($blogPosts[$j]['created_at']) < $currentTime) { // until end of array is reached or newer element is reached
+                            $blogPosts[$j + 1] = $blogPosts[$j]; // shifts previous element to the right by one space
+                            $j--; // shifts pointer down (creates empty slot at j+1)
                         }
 
                         $blogPosts[$j + 1] = $current;
