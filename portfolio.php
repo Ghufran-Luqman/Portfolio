@@ -1,0 +1,169 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bpmf+Zihi+Kai+Std&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.php" class="hoverLink">
+                <p class="text">Home</p>
+            </a>
+            <a href="education.php" class="hoverLink">
+                <p class="text">Education</p>
+            </a>
+            <a href="portfolio.php" class="hoverLink">
+                <p class="text" id="current">Portfolio</p>
+            </a>
+            <a href="skills.php" class="hoverLink">
+                <p class="text">Skills</p>
+            </a>
+            <a href="viewBlog.php" class="hoverLink">
+                <p class="text">View Blog</p>
+            </a>
+            <?php
+            if (isset($_SESSION['userId'])) { // if user is logged in
+                echo
+                '<a href="logout.php" class="hoverLink">
+                    <p class="text">Logout</p>
+                </a>';
+            }
+            else {
+                echo
+                '<a href="login.php" class="hoverLink">
+                    <p class="text">Login</p>
+                </a>';
+            }
+            ?>
+        </nav>
+        <?php
+        if (isset($_SESSION['userId'])) {
+            echo
+            "<aside>
+                <h3 class='text'>Welcome, User!</h3>
+            </aside>";
+        }
+        ?>
+    </header>
+
+    <main>
+        <div id="headers">
+            <h1 class="text">Portfolio</h1>
+            <h3 class="text">My Projects</h3>
+        </div>
+
+        <section>
+            <article>
+                <h2 class="text article-text">Uniichef</h2>
+                <div class="article-content">
+                    <div class="article-description" id="article-subtitle">
+                        <h4 class="text article-text article-subtitle">A recipe webapp project made for students</h4>
+                        <p class="text article-text">A simple and easy-to-use recipe webapp, utilizing <strong>Flask</strong> and <strong>SQLite</strong>, targeted towards busy people who have to cook on a tight schedule and budget.</p>
+                    </div>
+                    <figure>
+                        <img src="images/uniichef-homepage.png"/>
+                        <figcaption class="text article-text">Home Page - The user may filter recipes based on name and ingredients.</figcaption>
+                    </figure>
+
+                    <div class="article-description">
+                        <h4 class="text article-text">Viewing Recipes</h4>
+                    </div>
+                    <figure>
+                        <img src="images/uniichef-recipe-view.png"/>
+                        <figcaption class="text article-text">Recipe Page - The user may save recipes</figcaption>
+                    </figure>
+
+                    <div class="article-description">
+                        <h4 class="text article-text">Saved Recipes</h4>
+                    </div>
+                    <figure>
+                        <img src="images/uniichef-saved-recipe-view.png"/>
+                        <figcaption class="text article-text">Saved Recipe - The user may tick ingredients like on a shopping list</figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article>
+                <h2 class="text article-text">Battle Cats</h2>
+                <div class="article-content">
+                    <div class="article-description" id="article-subtitle">
+                        <h4 class="text article-text article-subtitle">A 1v1 game made in Python</h4>
+                        <p class="text article-text">A command line game made with <strong>Object Oriented Programming</strong> where two users battle each other.</p>
+                    </div>
+                    <figure>
+                        <img src="images/battle-cats-player1.png"/>
+                        <figcaption class="text article-text">Different abilities such as claw, shield and rage - rage is a powerful move with a cooldown.</figcaption>
+                    </figure>
+
+                    <div class="article-description">
+                        <h4 class="text article-text">Multiple Masteries</h4>
+                    </div>
+                    <figure>
+                        <img src="images/battle-cats-mastery-type.png"/>
+                        <figcaption class="text article-text">Masteries have different benefits and downsides.</figcaption>
+                    </figure>
+
+                    <div class="article-description">
+                        <h4 class="text article-text">Analyse the Situation</h4>
+                    </div>
+                    <figure>
+                        <img src="images/battle-cats-player2.png"/>
+                        <figcaption class="text article-text">Calculate optimal moves.</figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article>
+                <h2 class="text article-text">Habit Tracker</h2>
+                <div class="article-content">
+                    <div class="article-description">
+                        <h4 class="text article-text article-subtitle">A checklist webapp to help users stay consistent</h4>
+                        <p class="text article-text">A website application built with <strong>FastAPI</strong> and <strong>SQLite</strong> designed to help users stay consistent with their day-to-day habits or general tasks.</p>
+                    </div>
+                    <figure>
+                        <img src="images/habit-tracker-homepage.png"/>
+                        <figcaption class="text article-text">Home Page - The user may input new tasks, tick current tasks, and remove any tasks.</figcaption>
+                    </figure>
+
+                    <div class="article-description">
+                        <h4 class="text article-text">Undo Last Removal</h4>
+                    </div>
+                    <figure>
+                        <img src="images/habit-tracker-undo.png"/>
+                        <figcaption class="text article-text">The user can restore up to <strong>10</strong> recently removed tasks.</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h2 class="text">Contact</h2>
+        <nav>
+            <a href="tel:+447933567581" class="hoverLink">
+                <p class="text">Phone</p>
+            </a>
+            <a href="mailto:ghufranluqman1@gmail.com" class="hoverLink">
+                <p class="text">Email</p>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-ghufran-luqman-a20a252a5/" class="hoverLink">
+                <p class="text">LinkedIn</p>
+            </a>
+            <a href="https://github.com/ghufran-luqman" class="hoverLink">
+                <p class="text">GitHub</p>
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>

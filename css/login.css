@@ -1,0 +1,68 @@
+main {
+    align-items: center;
+}
+
+main h1 {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    text-align: center;
+}
+
+button {
+    border-radius: 4em;
+    border-color: #ca89e3;
+    transition: border-color 0.5s ease, color 0.5s ease;;
+    border-width: 0.15rem;
+    border-style: solid;
+    background-color: #190416;
+    color: #ca89e3;
+    font-family: "Bpmf Zihi Kai Std", sans-serif;
+    font-size: 1.2rem;
+    height: 2.3rem;
+    width: 5.75rem;
+}
+
+button:hover {
+    border-color: #c951f8;
+    color: #c951f8;
+}
+
+#login {
+    min-width: 30rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+#login h2 {
+    margin-bottom: 3rem;
+}
+
+#login form button {
+    margin-top: 2.5rem;
+}
+
+.form-element {
+    display: flex;
+    max-width: 15rem;
+    flex-direction: column;
+    margin: 0.25rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#error_message {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.notFilledOut {
+    background-color: rgb(191, 62, 111) !important;
+}
+
+.notFilledOut::placeholder {
+    color: #d8c0ff !important;
+}

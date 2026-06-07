@@ -1,0 +1,45 @@
+main h1 {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-subtitle {
+    margin-bottom: 0.25rem;
+}
+
+.article-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    max-width: 35rem;
+}
+
+.article-description p {
+    max-width: 25rem;
+}
+
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0rem;
+    flex-grow: 1;
+    max-width: 70%;
+    margin-bottom: 2rem;
+}

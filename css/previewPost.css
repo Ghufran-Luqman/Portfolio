@@ -1,0 +1,10 @@
+#previewButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    margin: 2rem;
+}
